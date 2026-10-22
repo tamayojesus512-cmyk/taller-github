@@ -1,0 +1,356 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniel Tamayo | Mi presentación</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #0c0a12;
+            color: #f5f3fa;
+            line-height: 1.7;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 22px 8%;
+            border-bottom: 1px solid #292333;
+        }
+
+        .logo {
+            color: #bb86fc;
+            font-size: 1.4rem;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: #ddd5e8;
+            text-decoration: none;
+            margin-left: 22px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #bb86fc;
+        }
+
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 60px 20px;
+            background:
+                radial-gradient(ellipse at top, #392052 0%, #0c0a12 65%);
+        }
+
+        .avatar {
+            width: 135px;
+            height: 135px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            font-weight: bold;
+            color: white;
+            background: linear-gradient(135deg, #a855f7, #541a91);
+            border: 3px solid #d6b4ff;
+            box-shadow: 0 0 40px #8b5cf655;
+            margin-bottom: 28px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 7vw, 5rem);
+            line-height: 1.2;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #bb86fc;
+        }
+
+        .hero p {
+            color: #c5bbd2;
+            max-width: 650px;
+            margin: 12px auto 28px;
+            font-size: 1.1rem;
+        }
+
+        .button {
+            display: inline-block;
+            background: #a855f7;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background: #8b5cf6;
+            transform: translateY(-3px);
+        }
+
+        section {
+            padding: 75px 8%;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .section-title span {
+            color: #bb86fc;
+        }
+
+        .about {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+            color: #c9c2d3;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 22px;
+            margin-top: 35px;
+        }
+
+        .card {
+            background: #17131f;
+            padding: 28px;
+            border: 1px solid #30263e;
+            border-radius: 18px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            border-color: #a855f7;
+        }
+
+        .card .icon {
+            font-size: 2.2rem;
+            margin-bottom: 12px;
+        }
+
+        .card h3 {
+            color: #d8b4fe;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #bdb4c9;
+        }
+
+        .quote {
+            text-align: center;
+            background: #17121f;
+            border-top: 1px solid #30263e;
+            border-bottom: 1px solid #30263e;
+        }
+
+        .quote blockquote {
+            font-size: clamp(1.3rem, 3vw, 2rem);
+            font-style: italic;
+            max-width: 750px;
+            margin: auto;
+        }
+
+        .quote p {
+            color: #bb86fc;
+            margin-top: 15px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 15px;
+            color: #92879f;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 0 7px;
+                font-size: 0.9rem;
+            }
+
+            section {
+                padding: 55px 6%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">DT.</div>
+
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#sobre-mi">Sobre mí</a>
+            <a href="#intereses">Intereses</a>
+            <a href="#proyectos">Proyectos</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="inicio">
+            <div class="avatar">DT</div>
+
+            <p>ESTUDIANTE · CREADOR · SOÑADOR</p>
+
+            <h1>Hola, soy <span>Daniel Tamayo.</span></h1>
+
+            <p>
+                Me apasiona la tecnología, la programación y el diseño.
+                Me gusta convertir mis ideas en proyectos reales y
+                aprender algo nuevo en cada experiencia.
+            </p>
+
+            <a href="#sobre-mi" class="button">
+                Conoce mi historia ↓
+            </a>
+        </section>
+
+        <section id="sobre-mi">
+            <h2 class="section-title">Un poco <span>sobre mí</span></h2>
+
+            <div class="about">
+                <p>
+                    Soy estudiante de la Licenciatura en Tecnologías de
+                    la Información y Comunicación (TIC). Me considero
+                    una persona creativa, curiosa y con ganas de
+                    superarse constantemente.
+                </p>
+
+                <p>
+                    Disfruto explorar nuevas tecnologías, desarrollar
+                    soluciones digitales y experimentar con diferentes
+                    formas de expresar mis ideas. Creo que aprender,
+                    equivocarse y volver a intentarlo es parte del camino
+                    para alcanzar grandes cosas.
+                </p>
+            </div>
+        </section>
+
+        <section id="intereses">
+            <h2 class="section-title">Lo que me <span>apasiona</span></h2>
+
+            <div class="cards">
+                <article class="card">
+                    <div class="icon">💻</div>
+                    <h3>Programación</h3>
+                    <p>
+                        Crear páginas web, desarrollar sistemas y
+                        encontrar soluciones mediante el código.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <div class="icon">🎨</div>
+                    <h3>Diseño digital</h3>
+                    <p>
+                        Dar vida a ideas mediante diseños, interfaces,
+                        imágenes y experiencias visuales.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <div class="icon">🚀</div>
+                    <h3>Tecnología</h3>
+                    <p>
+                        Descubrir nuevas herramientas, experimentar
+                        con inteligencia artificial e innovar.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <div class="icon">✍️</div>
+                    <h3>Creatividad</h3>
+                    <p>
+                        Escribir poemas, explorar la música y expresar
+                        lo que pienso y siento a través de las palabras.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section id="proyectos">
+            <h2 class="section-title">Mis <span>proyectos</span></h2>
+
+            <div class="cards">
+                <article class="card">
+                    <h3>TamaStock</h3>
+                    <p>
+                        Una propuesta de sistema para gestionar
+                        inventarios y facilitar las ventas de pequeños
+                        negocios.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>Diseño y emprendimiento</h3>
+                    <p>
+                        Desarrollo de ideas creativas relacionadas
+                        con productos personalizados, identidad visual
+                        y presencia digital.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>La caja bajo mi cama</h3>
+                    <p>
+                        Un proyecto literario donde la poesía se
+                        convierte en una forma de guardar recuerdos,
+                        emociones e historias.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section class="quote">
+            <blockquote>
+                "No necesito tener todo resuelto,
+                solo seguir construyendo la persona
+                que quiero llegar a ser."
+            </blockquote>
+            <p>— Daniel Tamayo</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Daniel Tamayo · Hecho con creatividad y código.</p>
+        <p>Siempre aprendiendo. Siempre creando.</p>
+    </footer>
+
+</body>
+</html>
