@@ -2,355 +2,462 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daniel Tamayo | Mi presentación</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daniel Tamayo | Cat Mode 67</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        html {
-            scroll-behavior: smooth;
-        }
+html {
+    scroll-behavior: smooth;
+}
 
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            background: #0c0a12;
-            color: #f5f3fa;
-            line-height: 1.7;
-        }
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #100b18;
+    color: #f8f0ff;
+    overflow-x: hidden;
+}
 
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 22px 8%;
-            border-bottom: 1px solid #292333;
-        }
+body::before {
+    content: "🐈‍⬛  ฅ^•ﻌ•^ฅ  🐈  67  🐾  ฅ^•ﻌ•^ฅ  🐈‍⬛";
+    position: fixed;
+    inset: 0;
+    opacity: 0.055;
+    font-size: 35px;
+    line-height: 2.5;
+    word-spacing: 25px;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: -1;
+}
 
-        .logo {
-            color: #bb86fc;
-            font-size: 1.4rem;
-            font-weight: bold;
-        }
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 7%;
+    background: #171021;
+    border-bottom: 1px solid #49305e;
+}
 
-        nav a {
-            color: #ddd5e8;
-            text-decoration: none;
-            margin-left: 22px;
-            transition: 0.3s;
-        }
+.logo {
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: #d4a7ff;
+}
 
-        nav a:hover {
-            color: #bb86fc;
-        }
+nav {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
 
-        .hero {
-            min-height: 85vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 60px 20px;
-            background:
-                radial-gradient(ellipse at top, #392052 0%, #0c0a12 65%);
-        }
+nav a {
+    text-decoration: none;
+    color: #e7d8f5;
+}
 
-        .avatar {
-            width: 135px;
-            height: 135px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            font-weight: bold;
-            color: white;
-            background: linear-gradient(135deg, #a855f7, #541a91);
-            border: 3px solid #d6b4ff;
-            box-shadow: 0 0 40px #8b5cf655;
-            margin-bottom: 28px;
-        }
+nav a:hover {
+    color: #c084fc;
+}
 
-        .hero h1 {
-            font-size: clamp(2.5rem, 7vw, 5rem);
-            line-height: 1.2;
-            margin-bottom: 15px;
-        }
+.hero {
+    min-height: 88vh;
+    padding: 70px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: radial-gradient(ellipse at center, #39204f, #100b18 70%);
+    position: relative;
+}
 
-        .hero h1 span {
-            color: #bb86fc;
-        }
+.cat {
+    font-size: 3rem;
+    display: inline-block;
+    animation: float 3s ease-in-out infinite;
+}
 
-        .hero p {
-            color: #c5bbd2;
-            max-width: 650px;
-            margin: 12px auto 28px;
-            font-size: 1.1rem;
-        }
+.cat-big {
+    font-size: 7rem;
+    filter: drop-shadow(0 0 25px #c084fc88);
+}
 
-        .button {
-            display: inline-block;
-            background: #a855f7;
-            color: white;
-            padding: 12px 25px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
-        }
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(-4deg); }
+    50% { transform: translateY(-12px) rotate(4deg); }
+}
 
-        .button:hover {
-            background: #8b5cf6;
-            transform: translateY(-3px);
-        }
+.hero h1 {
+    font-size: clamp(2.5rem, 7vw, 5rem);
+    margin: 15px 0;
+}
 
-        section {
-            padding: 75px 8%;
-        }
+.purple {
+    color: #c084fc;
+}
 
-        .section-title {
-            font-size: 2.2rem;
-            text-align: center;
-            margin-bottom: 35px;
-        }
+.hero p {
+    max-width: 650px;
+    color: #d5c5e5;
+    margin: 12px auto 25px;
+    font-size: 1.1rem;
+}
 
-        .section-title span {
-            color: #bb86fc;
-        }
+.badge {
+    background: #251533;
+    border: 1px solid #9b5bce;
+    border-radius: 50px;
+    padding: 8px 18px;
+    color: #e9caff;
+    font-size: 0.9rem;
+}
 
-        .about {
-            max-width: 850px;
-            margin: auto;
-            text-align: center;
-            color: #c9c2d3;
-        }
+.button {
+    display: inline-block;
+    padding: 13px 25px;
+    background: #a855f7;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: .3s;
+}
 
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 22px;
-            margin-top: 35px;
-        }
+.button:hover {
+    transform: scale(1.06);
+    background: #9333ea;
+}
 
-        .card {
-            background: #17131f;
-            padding: 28px;
-            border: 1px solid #30263e;
-            border-radius: 18px;
-            transition: 0.3s;
-        }
+section {
+    padding: 75px 8%;
+}
 
-        .card:hover {
-            transform: translateY(-6px);
-            border-color: #a855f7;
-        }
+.title {
+    text-align: center;
+    font-size: 2.4rem;
+    margin-bottom: 30px;
+}
 
-        .card .icon {
-            font-size: 2.2rem;
-            margin-bottom: 12px;
-        }
+.about {
+    max-width: 800px;
+    text-align: center;
+    margin: auto;
+    color: #cfc0dd;
+}
 
-        .card h3 {
-            color: #d8b4fe;
-            margin-bottom: 10px;
-        }
+.about p {
+    margin-bottom: 18px;
+}
 
-        .card p {
-            color: #bdb4c9;
-        }
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+    margin-top: 30px;
+}
 
-        .quote {
-            text-align: center;
-            background: #17121f;
-            border-top: 1px solid #30263e;
-            border-bottom: 1px solid #30263e;
-        }
+.card {
+    background: #1b1425;
+    border: 1px solid #49305e;
+    border-radius: 20px;
+    padding: 28px;
+    transition: .3s;
+    text-align: center;
+}
 
-        .quote blockquote {
-            font-size: clamp(1.3rem, 3vw, 2rem);
-            font-style: italic;
-            max-width: 750px;
-            margin: auto;
-        }
+.card:hover {
+    transform: translateY(-7px) rotate(-1deg);
+    border-color: #c084fc;
+    box-shadow: 0 10px 30px #a855f722;
+}
 
-        .quote p {
-            color: #bb86fc;
-            margin-top: 15px;
-        }
+.card .emoji {
+    font-size: 3rem;
+    margin-bottom: 12px;
+}
 
-        footer {
-            text-align: center;
-            padding: 30px 15px;
-            color: #92879f;
-            font-size: 0.9rem;
-        }
+.card h3 {
+    color: #d8b4fe;
+    margin-bottom: 10px;
+}
 
-        @media (max-width: 600px) {
-            header {
-                flex-direction: column;
-                gap: 15px;
-            }
+.card p {
+    color: #c7b8d6;
+}
 
-            nav a {
-                margin: 0 7px;
-                font-size: 0.9rem;
-            }
+.cat-wall {
+    text-align: center;
+    background: #171021;
+    border-top: 1px solid #49305e;
+    border-bottom: 1px solid #49305e;
+}
 
-            section {
-                padding: 55px 6%;
-            }
-        }
-    </style>
+.cat-wall .cats {
+    font-size: clamp(2rem, 5vw, 3.8rem);
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+.meme {
+    text-align: center;
+    background: linear-gradient(135deg, #311747, #140d20);
+}
+
+.number {
+    font-size: clamp(7rem, 22vw, 15rem);
+    line-height: 1;
+    font-weight: 1000;
+    color: #d8b4fe;
+    text-shadow: 0 0 45px #a855f788;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.04); }
+}
+
+.meme p {
+    font-size: 1.2rem;
+    margin: 20px 0;
+    color: #eadcf9;
+}
+
+footer {
+    text-align: center;
+    padding: 35px 15px;
+    color: #bba8ce;
+    background: #0b0810;
+}
+
+footer .cat {
+    margin: 10px;
+}
+
+@media(max-width: 600px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    section {
+        padding: 55px 6%;
+    }
+}
+</style>
 </head>
 
 <body>
 
-    <header>
-        <div class="logo">DT.</div>
+<header>
+    <div class="logo">🐈 DT.exe</div>
 
-        <nav>
-            <a href="#inicio">Inicio</a>
-            <a href="#sobre-mi">Sobre mí</a>
-            <a href="#intereses">Intereses</a>
-            <a href="#proyectos">Proyectos</a>
-        </nav>
-    </header>
+    <nav>
+        <a href="#inicio">Inicio 🐾</a>
+        <a href="#sobre-mi">Yo ฅ^•ﻌ•^ฅ</a>
+        <a href="#intereses">Intereses</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#67">67 💀</a>
+    </nav>
+</header>
 
-    <main>
-        <section class="hero" id="inicio">
-            <div class="avatar">DT</div>
+<main>
 
-            <p>ESTUDIANTE · CREADOR · SOÑADOR</p>
+    <section class="hero" id="inicio">
+        <div class="cat-big cat">🐈‍⬛</div>
 
-            <h1>Hola, soy <span>Daniel Tamayo.</span></h1>
+        <div class="badge">
+            🐾 HUMAN DETECTED · CAT LOVER BY ACCIDENT
+        </div>
 
+        <h1>Hola, soy <span class="purple">Daniel Tamayo</span> 🐱</h1>
+
+        <p>
+            Estudiante de TIC, programador en proceso, diseñador,
+            poeta y probablemente un gato en otra vida.
+        </p>
+
+        <p>Mi sistema operativo funciona con café, código y michis.</p>
+
+        <a href="#sobre-mi" class="button">Conoce a este espécimen 🐾</a>
+
+        <div class="cat" style="margin-top:35px;">
+            🐈 🐈‍⬛ 🐈 🐈‍⬛
+        </div>
+    </section>
+
+    <section id="sobre-mi">
+        <h2 class="title">¿Quién soy? <span class="purple">ฅ^•ﻌ•^ฅ</span></h2>
+
+        <div class="about">
             <p>
-                Me apasiona la tecnología, la programación y el diseño.
-                Me gusta convertir mis ideas en proyectos reales y
-                aprender algo nuevo en cada experiencia.
+                Soy Daniel Tamayo, estudiante de la Licenciatura en
+                Tecnologías de la Información y Comunicación (TIC).
+                Me gusta aprender, experimentar y convertir ideas
+                en proyectos reales.
             </p>
 
-            <a href="#sobre-mi" class="button">
-                Conoce mi historia ↓
-            </a>
-        </section>
+            <p>
+                Me interesan la programación, la inteligencia artificial,
+                el diseño digital, la música y la poesía. Siempre estoy
+                buscando algo nuevo que crear.
+            </p>
 
-        <section id="sobre-mi">
-            <h2 class="section-title">Un poco <span>sobre mí</span></h2>
+            <p>
+                <strong>Dato importante:</strong> puedo resolver un error
+                en Java, diseñar una página web y aun así distraerme
+                cinco minutos viendo un gato.
+            </p>
 
-            <div class="about">
+            <div style="font-size:2.5rem; margin-top:20px;">
+                🧑🏻‍💻 + 🐈 = 💜
+            </div>
+        </div>
+    </section>
+
+    <section id="intereses">
+        <h2 class="title">Mis <span class="purple">intereses</span> 🐾</h2>
+
+        <div class="cards">
+
+            <article class="card">
+                <div class="emoji">💻🐈</div>
+                <h3>Programación</h3>
                 <p>
-                    Soy estudiante de la Licenciatura en Tecnologías de
-                    la Información y Comunicación (TIC). Me considero
-                    una persona creativa, curiosa y con ganas de
-                    superarse constantemente.
+                    HTML, CSS, Java y desarrollo de sistemas.
+                    Los bugs son cucarachas digitales.
                 </p>
+            </article>
 
+            <article class="card">
+                <div class="emoji">🎨🐈‍⬛</div>
+                <h3>Diseño digital</h3>
                 <p>
-                    Disfruto explorar nuevas tecnologías, desarrollar
-                    soluciones digitales y experimentar con diferentes
-                    formas de expresar mis ideas. Creo que aprender,
-                    equivocarse y volver a intentarlo es parte del camino
-                    para alcanzar grandes cosas.
+                    Diseños, interfaces, identidades visuales
+                    y experimentos creativos.
                 </p>
-            </div>
-        </section>
+            </article>
 
-        <section id="intereses">
-            <h2 class="section-title">Lo que me <span>apasiona</span></h2>
+            <article class="card">
+                <div class="emoji">🤖🐾</div>
+                <h3>Inteligencia artificial</h3>
+                <p>
+                    Explorar nuevas herramientas, automatizar
+                    tareas y descubrir qué más se puede crear.
+                </p>
+            </article>
 
-            <div class="cards">
-                <article class="card">
-                    <div class="icon">💻</div>
-                    <h3>Programación</h3>
-                    <p>
-                        Crear páginas web, desarrollar sistemas y
-                        encontrar soluciones mediante el código.
-                    </p>
-                </article>
+            <article class="card">
+                <div class="emoji">✍️🐱</div>
+                <h3>Poesía y música</h3>
+                <p>
+                    Escribir lo que siento y transformar
+                    pensamientos en palabras.
+                </p>
+            </article>
 
-                <article class="card">
-                    <div class="icon">🎨</div>
-                    <h3>Diseño digital</h3>
-                    <p>
-                        Dar vida a ideas mediante diseños, interfaces,
-                        imágenes y experiencias visuales.
-                    </p>
-                </article>
+        </div>
+    </section>
 
-                <article class="card">
-                    <div class="icon">🚀</div>
-                    <h3>Tecnología</h3>
-                    <p>
-                        Descubrir nuevas herramientas, experimentar
-                        con inteligencia artificial e innovar.
-                    </p>
-                </article>
+    <section id="proyectos">
+        <h2 class="title">Mis <span class="purple">proyectos</span> 🚀</h2>
 
-                <article class="card">
-                    <div class="icon">✍️</div>
-                    <h3>Creatividad</h3>
-                    <p>
-                        Escribir poemas, explorar la música y expresar
-                        lo que pienso y siento a través de las palabras.
-                    </p>
-                </article>
-            </div>
-        </section>
+        <div class="cards">
 
-        <section id="proyectos">
-            <h2 class="section-title">Mis <span>proyectos</span></h2>
+            <article class="card">
+                <div class="emoji">📦🐈</div>
+                <h3>TamaStock</h3>
+                <p>
+                    Sistema de inventario y ventas pensado
+                    para ayudar a pequeños negocios.
+                </p>
+            </article>
 
-            <div class="cards">
-                <article class="card">
-                    <h3>TamaStock</h3>
-                    <p>
-                        Una propuesta de sistema para gestionar
-                        inventarios y facilitar las ventas de pequeños
-                        negocios.
-                    </p>
-                </article>
+            <article class="card">
+                <div class="emoji">👕🐈‍⬛</div>
+                <h3>Diseño y emprendimiento</h3>
+                <p>
+                    Ideas de productos personalizados, diseños
+                    y experiencias digitales.
+                </p>
+            </article>
 
-                <article class="card">
-                    <h3>Diseño y emprendimiento</h3>
-                    <p>
-                        Desarrollo de ideas creativas relacionadas
-                        con productos personalizados, identidad visual
-                        y presencia digital.
-                    </p>
-                </article>
+            <article class="card">
+                <div class="emoji">📜🐾</div>
+                <h3>La caja bajo mi cama</h3>
+                <p>
+                    Un proyecto de poesía que guarda recuerdos,
+                    sentimientos e historias.
+                </p>
+            </article>
 
-                <article class="card">
-                    <h3>La caja bajo mi cama</h3>
-                    <p>
-                        Un proyecto literario donde la poesía se
-                        convierte en una forma de guardar recuerdos,
-                        emociones e historias.
-                    </p>
-                </article>
-            </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="quote">
-            <blockquote>
-                "No necesito tener todo resuelto,
-                solo seguir construyendo la persona
-                que quiero llegar a ser."
-            </blockquote>
-            <p>— Daniel Tamayo</p>
-        </section>
-    </main>
+    <section class="cat-wall">
+        <h2 class="title">Comité oficial de <span class="purple">michis</span></h2>
 
-    <footer>
-        <p>© 2026 Daniel Tamayo · Hecho con creatividad y código.</p>
-        <p>Siempre aprendiendo. Siempre creando.</p>
-    </footer>
+        <p style="color:#c7b8d6; margin-bottom:25px;">
+            Todos están trabajando duro. Nadie sabe en qué.
+        </p>
+
+        <div class="cats">
+            🐈 🐈‍⬛ 🐈 🐈‍⬛ 🐈
+            <br>
+            ฅ^•ﻌ•^ฅ　 ฅ^•ﻌ•^ฅ
+            <br>
+            🐾 🐾 🐾 🐾 🐾
+            <br>
+            😼 🙀 😺 😹 😻
+            <br>
+            🐈‍⬛ 🐈 🐈‍⬛ 🐈 🐈‍⬛
+            <br>
+            (=^･ω･^=)　 (=^･ｪ･^=)
+        </div>
+    </section>
+
+    <section class="meme" id="67">
+        <div class="cat">🐈‍⬛</div>
+
+        <p>NO SÉ QUÉ SIGNIFICA, PERO...</p>
+
+        <div class="number">67</div>
+
+        <p>
+            SIX SEVEN 🗣️🔥<br>
+            EL MICHIS SE APODERÓ DE MI HTML.
+        </p>
+
+        <div style="font-size:3rem;">
+            🐈 + 67 + 🐈‍⬛ = 🤯
+        </div>
+
+        <p style="font-size:0.9rem; opacity:.7;">
+            Esta sección existe porque podía existir.
+        </p>
+    </section>
+
+</main>
+
+<footer>
+    <div class="cat">🐈‍⬛ 💜 🐈</div>
+    <p>© 2026 Daniel Tamayo</p>
+    <p>Hecho con código, creatividad y una cantidad preocupante de gatos.</p>
+    <p>ฅ^•ﻌ•^ฅ · CAT MODE ACTIVATED · 67</p>
+</footer>
 
 </body>
 </html>
